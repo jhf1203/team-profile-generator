@@ -10,6 +10,105 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
+function employeeQs() {
+
+    inquirer.prompt([
+        {
+            type: "input",
+            message: "Please enter the name of the team member you would like to add",
+            name: "answerName"
+        },
+        {
+            type: "input",
+            message: "Thanks!  Please enter their ID number",
+            name: "answerID"
+        },
+        {
+            type: "input",
+            message: "Great.  What is their e-mail address?",
+            name: "answerEmail"
+        },
+        {
+            type: "list",
+            message: "Looks good.  Now please select their role here",
+            name: "answerRole",
+            choices: ["Engineer", "Intern", "Manager"]
+        },
+    ]).then(function(answers) {
+        if (answers.answerRole === "Engineer") {
+            engineerQs();
+        } else if (answers.answerRole === "Intern") {
+            internQs();
+        } else {
+            managerQs();
+        }
+    })
+}
+
+function engineerQs() {
+    inquirer.prompt ([
+        {
+            type: "input",
+            message: "An Engineer, got it.  What is their GitHub username?",
+            name: "answerGithub",
+        },
+        {
+            type: "confirm",
+            message: "Okay, looks like we're all set for this one.  Would you like to add another?",
+            name: "answerAddAnother",
+        },
+    ]).then(function (answers) {
+        if (answers.answerAddAnother === true) {
+            employeeQs()
+        } else {
+            renderEngineer();
+        }
+    })
+}
+
+function internQs() {
+    inquirer.prompt ([
+        {
+            type: "input",
+            message: "Great!  An intern.  Where did they go to school?",
+            name: "answerSchool",
+        },
+        {
+            type: "confirm",
+            message: "Okay, looks like we're all set for this one.  Would you like to add another?",
+            name: "answerAddAnother",
+        },
+    ]).then(function (answers) {
+        if (answers.answerAddAnother === true) {
+            employeeQs()
+        } else {
+            renderIntern();
+        }
+    })
+}
+
+function managerQs() {
+    inquirer.prompt ([
+        {
+            type: "input",
+            message: "Alright, a manager.  Please enter their office number",
+            name: "answerOfficeNumber",
+        },
+        {
+            type: "confirm",
+            message: "Okay, looks like we're all set for this one.  Would you like to add another?",
+            name: "answerAddAnother",
+        },
+    ]).then(function (answers) {
+        if (answers.answerAddAnother === true) {
+            employeeQs()
+        } else {
+            renderManager();
+        }
+    })
+}
+
+employeeQs();
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
