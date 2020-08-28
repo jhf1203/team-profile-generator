@@ -65,12 +65,9 @@ function engineerQs(baseAnswers) {
         if (answers.answerAddAnother === true) {
             employeeQs()
         } else {
-            for (let i = 0; i<teamArr.length; i++) {
-                console.log(`Name: ${teamArr[i].name}
-                Role:  ${teamArr[i].role}
-                All set!`);
-            }  
-        }
+            newEngineer.render();            
+            console.log("rendered!")
+        }  
     })
 }
 
@@ -93,11 +90,9 @@ function internQs(baseAnswers) {
         if (answers.answerAddAnother === true) {
             employeeQs()
         } else {
-            for (let i = 0; i<teamArr.length; i++) {
-                console.log(`Name: ${teamArr[i].name}
-                Role:  ${teamArr[i].role}
-                All set!`);
-            }  
+            newIntern.render();
+            console.log("rendered!")
+
         }
     })
 }
@@ -120,11 +115,8 @@ function managerQs(baseAnswers) {
         if (answers.answerAddAnother === true) {
             employeeQs()
         } else {
-            for (let i = 0; i<teamArr.length; i++) {
-                console.log(`Name: ${teamArr[i].name}
-                Role:  ${teamArr[i].role}
-                All set!`);
-            }  
+            newManager.render();
+            console.log("rendered!")
         }
     })
 }
