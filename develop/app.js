@@ -9,6 +9,7 @@ const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
+const Employee = require("./lib/Employee");
 
 function employeeQs() {
 
@@ -36,16 +37,16 @@ function employeeQs() {
         },
     ]).then(function(answers) {
         if (answers.answerRole === "Engineer") {
-            engineerQs();
+            engineerQs(answers);
         } else if (answers.answerRole === "Intern") {
-            internQs();
+            internQs(answers);
         } else {
-            managerQs();
+            managerQs(answers);
         }
     })
 }
 
-function engineerQs() {
+function engineerQs(baseAnswers) {
     inquirer.prompt ([
         {
             type: "input",
@@ -58,15 +59,22 @@ function engineerQs() {
             name: "answerAddAnother",
         },
     ]).then(function (answers) {
+        const newEngineer = new Engineer(baseAnswers.answerRole, baseAnswers.answerName, baseAnswers.answerID, baseAnswers.answerEmail, answers.answerGithub);
+        teamArr.push(newEngineer);
+        console.log(newEngineer);
         if (answers.answerAddAnother === true) {
             employeeQs()
         } else {
-            renderEngineer();
+            for (let i = 0; i<teamArr.length; i++) {
+                console.log(`Name: ${teamArr[i].name}
+                Role:  ${teamArr[i].role}
+                All set!`);
+            }  
         }
     })
 }
 
-function internQs() {
+function internQs(baseAnswers) {
     inquirer.prompt ([
         {
             type: "input",
@@ -79,15 +87,22 @@ function internQs() {
             name: "answerAddAnother",
         },
     ]).then(function (answers) {
+        const newIntern = new Intern(baseAnswers.answerRole, baseAnswers.answerName, baseAnswers.answerID, baseAnswers.answerEmail, answers.answerSchool);
+        teamArr.push(newIntern);
+            console.log(newIntern);
         if (answers.answerAddAnother === true) {
             employeeQs()
         } else {
-            renderIntern();
+            for (let i = 0; i<teamArr.length; i++) {
+                console.log(`Name: ${teamArr[i].name}
+                Role:  ${teamArr[i].role}
+                All set!`);
+            }  
         }
     })
 }
 
-function managerQs() {
+function managerQs(baseAnswers) {
     inquirer.prompt ([
         {
             type: "input",
@@ -100,14 +115,21 @@ function managerQs() {
             name: "answerAddAnother",
         },
     ]).then(function (answers) {
+        const newManager = new Manager(baseAnswers.answerRole, baseAnswers.answerName, baseAnswers.answerID, baseAnswers.answerEmail, answers.answerOfficeNumber);
+            teamArr.push(newManager);
         if (answers.answerAddAnother === true) {
             employeeQs()
         } else {
-            renderManager();
+            for (let i = 0; i<teamArr.length; i++) {
+                console.log(`Name: ${teamArr[i].name}
+                Role:  ${teamArr[i].role}
+                All set!`);
+            }  
         }
     })
 }
 
+const teamArr = []
 employeeQs();
 
 // Write code to use inquirer to gather information about the development team members,

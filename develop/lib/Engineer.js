@@ -7,6 +7,15 @@ class Engineer extends Employee {
         this.gitHub = gitHub;
     }
 
+    getGithub() {
+        console.log(`My github is ${this.gitHub}`)
+        return this.gitHub
+    }
+
 }
 
-const engineer = new Engineer("Jim", 20, "jhf1203@gmail.com", "jhf1203")
+const engineer = new Engineer("Engineer", "Jim", 20, "jhf1203@gmail.com", "jhf1203")
+
+engineer.getGithub();
+
+module.exports = Engineer
