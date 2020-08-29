@@ -10,6 +10,7 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 const Employee = require("./lib/Employee");
+const teamArr = []
 
 function employeeQs() {
 
@@ -61,11 +62,12 @@ function engineerQs(baseAnswers) {
     ]).then(function (answers) {
         const newEngineer = new Engineer(baseAnswers.answerRole, baseAnswers.answerName, baseAnswers.answerID, baseAnswers.answerEmail, answers.answerGithub);
         teamArr.push(newEngineer);
+        console.log(teamArr);
         console.log(newEngineer);
         if (answers.answerAddAnother === true) {
             employeeQs()
         } else {
-            newEngineer.render();            
+            buildTeam();            
             console.log("rendered!")
         }  
     })
@@ -90,9 +92,8 @@ function internQs(baseAnswers) {
         if (answers.answerAddAnother === true) {
             employeeQs()
         } else {
-            newIntern.render();
+            buildTeam();
             console.log("rendered!")
-
         }
     })
 }
@@ -115,13 +116,20 @@ function managerQs(baseAnswers) {
         if (answers.answerAddAnother === true) {
             employeeQs()
         } else {
-            newManager.render();
+            buildTeam();
             console.log("rendered!")
         }
     })
 }
 
-const teamArr = []
+function buildTeam() {
+    if (!fs.existsSync(OUTPUT_DIR)) {
+      fs.mkdirSync(OUTPUT_DIR)
+    }
+    fs.writeFileSync(outputPath, render(teamArr), "utf-8");
+  }
+
+
 employeeQs();
 
 // Write code to use inquirer to gather information about the development team members,
