@@ -1,0 +1,50 @@
+body {
+    color:#211f1d
+}
+
+h1 {
+    font-family: 'Quicksand', sans-serif;}
+
+h2 {
+    font-family: 'Quicksand', sans-serif;
+    width:100%
+}
+
+h3 {
+    font-family: 'Quicksand', sans-serif;    
+    width:100%;
+    text-align:center;
+}
+
+p {
+    font-family: 'Raleway', sans-serif;
+    text-align:center;
+}
+
+a {
+    font-family: 'Raleway', sans-serif;
+    text-align:center;}
+
+.jumbotron {
+    border:2px solid #211f1d;
+    background-image: url(".../assets/images/jumbotron.png");
+}
+
+.row-primary {
+    margin-top:15px;
+    border:2px solid #211f1d;
+    border-radius:5px;
+}
+
+.col-md-3 {
+    border-right:1px solid #211f1d;
+}
+
+.col-md-2 {
+    border-left:1px solid #211f1d;
+}
+
+.row-header {
+    border-bottom:1px solid #211f1d;
+}
+

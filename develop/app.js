@@ -60,10 +60,10 @@ function engineerQs(baseAnswers) {
             name: "answerAddAnother",
         },
     ]).then(function (answers) {
-        const newEngineer = new Engineer(baseAnswers.answerRole, baseAnswers.answerName, baseAnswers.answerID, baseAnswers.answerEmail, answers.answerGithub);
+        const newEngineer = new Engineer(baseAnswers.answerName, baseAnswers.answerID, baseAnswers.answerEmail, answers.answerGithub);
         teamArr.push(newEngineer);
         console.log(teamArr);
-        console.log(newEngineer);
+        // console.log(newEngineer);
         if (answers.answerAddAnother === true) {
             employeeQs()
         } else {
@@ -86,9 +86,10 @@ function internQs(baseAnswers) {
             name: "answerAddAnother",
         },
     ]).then(function (answers) {
-        const newIntern = new Intern(baseAnswers.answerRole, baseAnswers.answerName, baseAnswers.answerID, baseAnswers.answerEmail, answers.answerSchool);
+        const newIntern = new Intern(baseAnswers.answerName, baseAnswers.answerID, baseAnswers.answerEmail, answers.answerSchool);
         teamArr.push(newIntern);
-            console.log(newIntern);
+            // console.log(newIntern);
+            console.log(teamArr);
         if (answers.answerAddAnother === true) {
             employeeQs()
         } else {
@@ -111,8 +112,9 @@ function managerQs(baseAnswers) {
             name: "answerAddAnother",
         },
     ]).then(function (answers) {
-        const newManager = new Manager(baseAnswers.answerRole, baseAnswers.answerName, baseAnswers.answerID, baseAnswers.answerEmail, answers.answerOfficeNumber);
+        const newManager = new Manager(baseAnswers.answerName, baseAnswers.answerID, baseAnswers.answerEmail, answers.answerOfficeNumber);
             teamArr.push(newManager);
+            console.log(teamArr);
         if (answers.answerAddAnother === true) {
             employeeQs()
         } else {
