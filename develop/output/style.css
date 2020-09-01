@@ -135,6 +135,21 @@ a {
     background-color:#cb8912;
 }
 
+.engineer-email:hover {
+    color:#697b7b;
+    font-weight:bold; 
+}
+
+.manager-email:hover {
+    color:#8a4226;
+    font-weight:bold; 
+}
+
+.intern-email:hover {
+    color:#cb8912;
+    font-weight:bold; 
+}
+
 /* Media Rules */
 
 @media only screen and (max-width:768px) {
