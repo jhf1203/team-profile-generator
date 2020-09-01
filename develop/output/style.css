@@ -81,7 +81,7 @@ a {
     background-color:#cb8912;
     color:#d8d4cf;
     border-right:none;
-    transition: background-color 0.25s ease;
+    transition: background-color, 0.25s ease;
 }
 
 .col-md-2 {
@@ -124,16 +124,13 @@ a {
 }
 
 .manager-gap {
-    background-image:url("../../assets/toquay.png");
-    background-size: 100%;
+    background-color:#8a4226;
 }
 
 .engineer-gap {
-    background-image:url("../../assets/rue.png");
-    background-size:100%;
+    background-color:#697b7b;
 }
 
 .intern-gap {
-    background-image:url("../../assets/marmalade.png");
-    background-size:100%;
+    background-color:#cb8912;
 }
