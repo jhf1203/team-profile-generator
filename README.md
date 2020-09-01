@@ -41,9 +41,10 @@ Also included are application tests and HTML templates that can be modified as a
 
 In order to use this application you simply run app.js in its terminal ("node app"), and answer the prompts accordingly.  You are able to add as many employees as you would like, regardless of job title.  The HTML template takes care of arranging them in an org chart format of rows starting with manager, then engineer and intern.
 
+#### Supplemental | Walkthrough Videos:
+
 - [Application Functionality Walkthrough](https://youtu.be/U77DcU5zm8g)
 - [Application Code Walkthrough](https://youtu.be/Rnv2ZL6jPqs)
-- [Sample Deployment](https://jhf1203.github.io/team-profile-generator/team.html)
   
 _________________________________
   
