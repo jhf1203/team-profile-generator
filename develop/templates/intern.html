@@ -1,52 +1,38 @@
-<div class= "row row-primary">
-    <div class="col-md-3 col-name">
-        <h2 class="name">{{ name }}</h2>
+<div class= "row row-primary row-primary-intern">
+    <div class="col-md-3">
+        <h2>{{ name }}</h2>
     </div>
-    <div class="col-md-1"></div>
-    <div class="col-md-2">
+    <div class="col-md-1 intern-gap"></div>
+    <div class="col-md-2 col-intern">
         <div class="row row-header">
-            <h3 class="header">Role</h3>
+            <h3>Role</h3>
         </div>
-        <div class="row-content">
+        <div class="row-content-intern">
             <p class="role"></p><i class="fas fa-user-graduate mr-2"></i>{{ role }}</p>
         </div>
     </div>
-    <div class="col-md-2">
+    <div class="col-md-2 col-intern">
         <div class="row row-header">
-            <h3 class="header">ID</h3>
+            <h3>ID</h3>
         </div>
-        <div class="row-content">
+        <div class="row-content-intern">
             <p>{{ id }}</p>
         </div>
     </div>
-    <div class="col-md-2">
+    <div class="col-md-2 col-intern">
         <div class="row row-header">
-            <h3 class="header">E-Mail</h3>
+            <h3>E-Mail</h3>
         </div>
-        <div class="row-content">
+        <div class="row-content-intern">
             <p><a href="mailto:{{ email }}">{{ email }}</a></p>
         </div>
     </div>
-    <div class="col-md-2">
+    <div class="col-md-2 col-intern">
         <div class="row row-header">
-            <h3 class="header">School</h3>
+            <h3>School</h3>
         </div>
-        <div class="row-content">
+        <div class="row-content-intern">
             <p>{{ school }}</p>
         </div>
     </div>
 </div>
-
-<!-- <div class="card employee-card">
-    <div class="card-header">
-        <h2 class="card-title">{{ name }}</h2>
-        <h3 class="card-title"><i class="fas fa-user-graduate mr-2"></i>{{ role }}</h3>
-    </div>
-    <div class="card-body">
-        <ul class="list-group">
-            <li class="list-group-item">ID: {{ id }}</li>
-            <li class="list-group-item">Email: <a href="mailto:{{ email }}">{{ email }}</a></li>
-            <li class="list-group-item">School: {{ school }}</li>
-        </ul>
-    </div>
-</div> -->
