@@ -134,3 +134,53 @@ a {
 .intern-gap {
     background-color:#cb8912;
 }
+
+/* Media Rules */
+
+@media only screen and (max-width:768px) {
+
+    h1 {
+        background-color:rgba(255,255,255,0.7);
+        border:1px solid #504b47;
+        border-radius:5px;
+        text-align:center;
+        margin-left:0px;
+    }
+
+    h2 {
+        font-size:40px;
+        margin-top:5%;
+        margin-bottom:5%;
+    }
+
+    a, 
+    p {
+        font-size:20px;
+        margin-top:2%;
+        margin-bottom:2%;
+    }
+
+    .row-header {
+        background-color:#918e8a;
+        border-top:2px double #504b47;
+    }
+
+    .col-name-manager {
+        background-color:#8a4226;
+        color:#faf7f3;
+        text-align:center;
+    }
+
+    .col-name-engineer {
+        background-color:#697b7b;
+        color:#faf7f3;        
+        text-align:center;
+    }
+
+    .col-name-intern {
+        background-color: #cb8912;
+        color:#faf7f3;
+        text-align:center;
+    }
+
+}
