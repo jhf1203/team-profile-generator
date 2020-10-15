@@ -6,6 +6,8 @@ const templatesDir = path.resolve(__dirname, "../templates");
 const render = employees => {
   const html = [];
 
+// Pushing each employee into the html array by seniority, to ensure that Managers always populate first, Interns last
+
   html.push(...employees
     .filter(employee => employee.getRole() === "Manager")
     .map(manager => renderManager(manager))
@@ -23,6 +25,8 @@ const render = employees => {
 
 };
 
+// Defining the new values in manager.html, engineer.html, and intern.html with the results from inquirer
+// For Manager
 const renderManager = manager => {
   let template = fs.readFileSync(path.resolve(templatesDir, "manager.html"), "utf8");
   template = replacePlaceholders(template, "name", manager.getName());
@@ -33,6 +37,7 @@ const renderManager = manager => {
   return template;
 };
 
+// For Engineer
 const renderEngineer = engineer => {
   let template = fs.readFileSync(path.resolve(templatesDir, "engineer.html"), "utf8");
   template = replacePlaceholders(template, "name", engineer.getName());
@@ -43,6 +48,7 @@ const renderEngineer = engineer => {
   return template;
 };
 
+// For Intern
 const renderIntern = intern => {
   let template = fs.readFileSync(path.resolve(templatesDir, "intern.html"), "utf8");
   template = replacePlaceholders(template, "name", intern.getName());
@@ -53,11 +59,13 @@ const renderIntern = intern => {
   return template;
 };
 
+// Function that determines the destination of the repalacement values in each template.html file.
 const renderMain = html => {
   const template = fs.readFileSync(path.resolve(templatesDir, "main.html"), "utf8");
   return replacePlaceholders(template, "team", html);
 };
 
+// Function that replaces the placeholder values with the values entered.
 const replacePlaceholders = (template, placeholder, value) => {
   const pattern = new RegExp("{{ " + placeholder + " }}", "gm");
   return template.replace(pattern, value);
