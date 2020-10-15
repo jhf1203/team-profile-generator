@@ -1,7 +1,9 @@
 const Employee = require("./Employee")
 
+// Constructor for the Subclass Manager, an extension of Employee
+
 class Manager extends Employee {
-    constructor (name, id, email, officeNumber) {
+    constructor(name, id, email, officeNumber) {
         super(name, id, email);
         this.officeNumber = officeNumber;
     }
